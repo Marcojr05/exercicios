@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="js/script.js" defer></script>
+    <title>Exercícios</title>
+</head>
+<body>
+    <h1>Exercícios</h1>
+
+    <h2>1)- Tabuada</h2>
+    <input type="number" id="num" placeholder="Digite um número">
+    <button type="submit" onclick="tabuada()">Calcular</button>
+    <div id="resul"></div>
+
+    <hr>
+
+    <h2>2)- Soma dos produtos</h2>
+    <label for="valor">Digite os valores dos 5 produtos:</label><br>
+    <input type="text" id="valor" required>
+    <br><br>
+    
+    <button onclick="calcularSoma()">Calcular Soma</button>
+
+    <div id="soma"></div>
+
+    <hr>
+
+    <h2>3) Saldo</h2>
+    <input type="number" id="sald" placeholder="Saldo Inicial" required>
+    
+    <label for="opera">Escolha a operação:</label>
+    <select name="calc" id="calc">
+        <option value="deb">Débito</option>
+        <option value="cred">Crédito</option>
+    </select>
+    
+    <input type="number" id="valor" placeholder="Valor da Operação" required>
+    
+    <br><br>
+    
+    <button onclick="calcularSaldo()">Calcular Saldo</button>
+    
+    <div id="saldo"></div>
+</body>
