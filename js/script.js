@@ -23,40 +23,63 @@ function calcularSoma() {
 }
 
 
+let saldo = 0;
+
+function calculaSaldo() {
+    // Limpa a resposta anterior
+    document.getElementById("resposta3").innerHTML = "";
+
+    // Captura o valor e a operação
+    let valor1 = Number(document.getElementById("valor3").value);
+    let operar = document.getElementById("op").value;
+
+    // Atualiza o saldo com base na operação
+    if (operar === "debito") {
+        saldo -= valor1;
+    } else {
+        saldo += valor1;
+    }
+
+    // Exibe o saldo total
+    document.getElementById("resposta3").innerHTML = "Valor total: " + saldo;
+}
 
 
 
-
-
-let totalAulas= 0;
+let totalAulas = 0;
 let presencas = 0;
 
-function registrarAulas9() {
+function registrarAulas() {
     totalAulas = Number(document.getElementById("aulas").value);
-    presencas = 0;
+    presencas = 0; // Reseta as presenças
     const aulasInput = document.getElementById("aulasInput");
-    aulasInput.innerHTML - "";
+    aulasInput.innerHTML = ""; // Limpa entradas anteriores
 
     for (let i = 1; i <= totalAulas; i++) {
         aulasInput.innerHTML += `
-        <label>Aula ${i}:</label>
-        <select id="aulas${i}">
-            <option value="presente">Presente</option>
-            <option value="ausente">Ausente</option>
-        </select><br>`;
+            <label>Aula ${i}:</label>
+            <select id="aula${i}">
+                <option value="presente">Presente</option>
+                <option value="ausente">Ausente</option>
+            </select><br>`;
     }
+
     document.getElementById("registro").style.display = "block";
 }
 
 function calcularFrequencia() {
     for (let i = 1; i <= totalAulas; i++) {
-        const estado = document.getElementById(`aulas${i}`).value;
-        if (estado == "presente") {
+        const estado = document.getElementById(`aula${i}`).value;
+        if (estado === "presente") {
             presencas++;
         }
     }
+
     const frequencia = (presencas / totalAulas) * 100;
-    let resultado = `Frequência:`
+    let resultado = `Frequência: ${frequencia.toFixed(2)}%<br>`;
+    resultado += (frequencia >= 75) ? "Aluno Aprovado!" : "Aluno Reprovado!";
+
+    document.getElementById("resposta4").innerHTML = resultado;
 }
 
 

@@ -27,37 +27,32 @@
 
     <hr>
 
-    <h2>3)- Saldo</h2>
-    <input type="number" id="sald" placeholder="Saldo Inicial" required>
-    
-    <label for="opera">Escolha a operação:</label>
-    <select name="calc" id="calc">
-        <option value="deb">Débito</option>
-        <option value="cred">Crédito</option>
+    <h2>3) Controle de Saldo</h2>
+    <input type="number" name="valor3" id="valor3">
+    <label for="op">Escolha uma operação:</label>
+    <select name="op" id="op">
+        <option value="debito">Débito</option>
+        <option value="credito">Crédito</option>
     </select>
-    
-    <input type="number" id="valor" placeholder="Valor da Operação" required>
-    
-    <br><br>
-    
-    <button onclick="calcularSaldo()">Calcular Saldo</button>
-    
-    <div id="saldo"></div>
+    <button onclick="calculaSaldo()">Calcular</button>
+    <p id="resposta3"></p>
 
     <hr>
 
-    <h2>4)- Cálculo de frequência do Aluno</h2>
+    <h2>4) Registro de Presença</h2>
 
-    <label for="aulas">Quantidade de aulas:</label>
-    <input type="number"id="inicio" value="0" min="1">
+    <label for="aulas">Quantidade de Aulas:</label>
+    <input type="number" id="aulas" value="0" min="1">
 
     <button type="button" onclick="registrarAulas()">Registrar Aulas</button>
 
-    <div id="registro" style="display: none;">
-        <h3>Registro de Presenças</h3>
+    <div id="registro" style="display:none;">
+        <h2>Registro de Presenças</h2>
         <div id="aulasInput"></div>
         <button type="button" onclick="calcularFrequencia()">Calcular Frequência</button>
     </div>
+
+    <p id="resposta4"></p>
 
     <hr>
 
